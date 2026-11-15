@@ -8,11 +8,11 @@ endif()
 # find dependencies
 find_package(ament_cmake REQUIRED)
 find_package(rosidl_default_generators REQUIRED)
-find_package(messages_cpp REQUIRED)
 find_package(rclcpp REQUIRED)
 rosidl_generate_interfaces(${PROJECT_NAME}
   "msg/ItemInfo.msg"
 )
+ament_export_dependencies(rosidl_default_runtime)
 
 if(BUILD_TESTING)
   find_package(ament_lint_auto REQUIRED)
